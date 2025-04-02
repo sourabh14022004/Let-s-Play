@@ -30,8 +30,13 @@ const items = document.querySelectorAll('.instrument h1');
                 document.getElementById(item.dataset.target).classList.add('active');
             });
         });
-
+// piano navigation
 const pianoElement=document.getElementsByClassName("piano")[0];
 pianoElement.addEventListener("click",function(){
     window.location.href='./instruments/Piano/index.html';
+})
+// guiter navigation
+const guitarElement=document.getElementsByClassName("guitar")[0];
+guitarElement.addEventListener("click",function(){
+    window.location.href='./instruments/Guiter/index.html';
 })
