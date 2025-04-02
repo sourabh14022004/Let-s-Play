@@ -1,3 +1,23 @@
+// DOMContentLoaded checks wheather the 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active"); 
+  });
+
+  // Optional: Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+      if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+      }
+  });
+});
+
 let f = document.querySelector('.f')
 let fag = document.querySelector('.fag')
 let fsharpag = document.querySelector('.fsharpag')
@@ -103,7 +123,4 @@ body.addEventListener('keypress', function(event){
       e.style.backgroundColor = 'silver'
       sound9.play()
     }
-    
-
-
 })
