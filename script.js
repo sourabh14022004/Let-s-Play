@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active"); // This toggles the animation for the icon
+        menuToggle.classList.toggle("active"); 
     });
 
     // Optional: Close menu when clicking outside
@@ -17,3 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+const items = document.querySelectorAll('.instrument h1');
+        const progressBar = document.querySelector('.progress-bar');
+        const infoBoxes = document.querySelectorAll('.info-box');
+        
+        items.forEach((item, index) => {
+            item.addEventListener('mouseover', () => {
+                progressBar.style.height = `${(index + 1) * 25}%`;
+                document.querySelector('.info-box.active').classList.remove('active');
+                document.getElementById(item.dataset.target).classList.add('active');
+            });
+        });
+
+const pianoElement=document.getElementsByClassName("piano")[0];
+pianoElement.addEventListener("click",function(){
+    window.location.href='./instruments/Piano/index.html';
+})
