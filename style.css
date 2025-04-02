@@ -82,17 +82,15 @@ bottom part is an example of that.
 /* Hide navigation links on small screens */
 @media (max-width: 768px) {
     .nav-links {
-        background-color: red;
         position: absolute;
         top: 60px;
-        transform: translateX(-100%);
+        /* transform: translateX(100%); */
         width: 60%;
         height: 100vh;
         background-color: #333;
         flex-direction: column;
         align-items: start;
         gap: 20px;
-        /* padding: 30px 20px; */
         transition: right 0.5s ease-in-out;
         opacity: 0;
         visibility: hidden;
@@ -103,7 +101,8 @@ bottom part is an example of that.
         right: 0;
         opacity: 1;
         visibility: visible;
-        display: block;
+        display: flex;
+
     }
 
     .menu-toggle {
