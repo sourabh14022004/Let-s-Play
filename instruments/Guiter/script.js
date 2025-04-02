@@ -35,7 +35,7 @@ let e = document.querySelector('.e')
 let gsharpag = document.querySelector('.gsharpag')
 let body = document.querySelector('.body')
 let dsharphash = document.querySelector('.dsharphash')
-
+console.log("Working")
 let sound1 = new Audio('../../audio/guiter/1st_String_E_64kb.mp3')
 let sound2 = new Audio('../../audio/guiter/2nd_String_B_64kb.mp3')
 let sound3 = new Audio('../../audio/guiter/3rd_String_G_64kb.mp3')
