@@ -40,3 +40,9 @@ const guitarElement=document.getElementsByClassName("guitar")[0];
 guitarElement.addEventListener("click",function(){
     window.location.href='./instruments/Guiter/index.html';
 })
+
+// drumkit navigation
+const drumkitElement=document.getElementsByClassName("drumkit")[0];
+drumkitElement.addEventListener("click",function(){
+    window.location.href='./instruments/Drumkit/index.html';
+})
