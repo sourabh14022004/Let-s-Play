@@ -1,0 +1,281 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #f5e9d7;
+  transition: background-color 0.3s ease;
+
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding-right: 45px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    background-image: url('https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* to apply animation on any element, the element should be exist on the
+html page then only you can apply animation...
+bottom part is an example of that.
+*/
+
+
+/* Hide navigation links on small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        /* transform: translateX(100%); */
+        width: 60%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        transition: right 0.5s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+
+    .nav-links.active {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Transforming the menu icon when active */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+
+  .harmonium-title {
+    margin-bottom: 2rem;
+    color: #8B4513;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .m{
+    display: flex;
+    justify-content: center;
+    align-self : center;
+    width: 90vh;
+    align-items: center;
+  }
+  .main-keys {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #d4a76a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+  
+  .main-keys div {
+    flex: 1;
+    margin: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: ivory;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #a67c52;
+  }
+  
+  .main-keys div:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Key press effect */
+  .main-keys div.active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3) inset;
+  }
+  
+  .main-keys div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: opacity 0.1s ease;
+  }
+  
+  .main-keys div.flash::after {
+    opacity: 1;
+    animation: flash-animation 0.3s ease-out;
+  }
+  
+  @keyframes flash-animation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .drone-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .drone-button {
+    padding: 10px 20px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+  
+  .drone-button:hover {
+    background-color: #a05c2c;
+  }
+  
+  .drone-button.active {
+    background-color: #d4a76a;
+    color: #8B4513;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5) inset;
+  }
+  
+  .key-guide {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .controls-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #8B4513;
+  }
+
+  @media screen and (max-width:470px) {
+    .m{
+        width: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  @media screen and (max-width:430px) {
+    .m{
+        width: 23rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+
+
