@@ -46,3 +46,9 @@ const drumkitElement=document.getElementsByClassName("drumkit")[0];
 drumkitElement.addEventListener("click",function(){
     window.location.href='./instruments/Drumkit/index.html';
 })
+
+// harmonium navigation
+const harmoniumElement=document.getElementsByClassName("harmonium")[0];
+harmoniumElement.addEventListener("click",function(){
+    window.location.href='./instruments/Harmonium/index.html';
+})
