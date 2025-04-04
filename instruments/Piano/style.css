@@ -1,95 +1,131 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    padding: 0;
-    margin: 0;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+  align-items: center;
+  height: 100%;
 }
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .box {
-    height: 150px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    border: 2px solid white;
-    text-transform: capitalize;
-    box-shadow: 0px 0px 100px 20px rgba(233, 34, 34, 0.766);
+  height: 250px;
+  width: 70px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  transition: transform 0.1s ease;
+  border: 2px solid #222;
+  box-shadow: 0 5px 0 #222;
+  cursor: pointer;
+  transform-origin: top center;
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
 
+.white {
+  background-color: white;
+  z-index: 1;
+  color: #000;
+}
+
+.black {
+  background-color: black;
+  color: white;
+  height: 180px;
+  width: 40px;
+  margin-left: -20px;
+  margin-right: -20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Press effect — only bottom dips */
+.white.pressed {
+    transform: perspective(200px) rotateX(-4deg);
+  }
+  
+  .black.pressed {
+    transform: perspective(300px) rotateX(-4deg);
+  }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding-right: 45px;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding-right: 45px;
 }
 
 .nav-links li {
-    display: inline;
+  display: inline;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ff9800;
+  color: #ff9800;
 }
 
 .logo {
-    height: 50px;
-    width: 50px;
-    background-image: url('https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg');
-    background-size: cover;
-    background-position: center;
+  height: 50px;
+  width: 50px;
+  background-image: url("https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* Hamburger menu styles */
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .menu-toggle span {
-    display: block;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* to apply animation on any element, the element should be exist on the
@@ -97,61 +133,136 @@ html page then only you can apply animation...
 bottom part is an example of that.
 */
 
-
 /* Hide navigation links on small screens */
 @media (max-width: 768px) {
-    .nav-links {
-        background-color: red;
-        position: absolute;
-        top: 60px;
-        transform: translateX(-100%);
-        width: 60%;
-        height: 100vh;
-        background-color: #333;
-        flex-direction: column;
-        align-items: start;
-        gap: 20px;
-        /* padding: 30px 20px; */
-        transition: right 0.5s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-    }
+  .nav-links {
+    background-color: red;
+    position: absolute;
+    top: 60px;
+    transform: translateX(-100%);
+    width: 60%;
+    height: 100vh;
+    background-color: #333;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    /* padding: 30px 20px; */
+    transition: right 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 
-    .nav-links.active {
-        right: 0;
-        opacity: 1;
-        visibility: visible;
-        display: block;
-    }
+  .nav-links.active {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
 
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-    }
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
 
-    .menu-toggle span {
-        display: block;
-        height: 3px;
-        background-color: white;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
 
-    /* Transforming the menu icon when active */
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
+  /* Transforming the menu icon when active */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
 
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
 
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
+
+
+@media (max-width: 1024px) {
+    .box {
+      width: 50px;
+      height: 200px;
+      font-size: 1.2rem;
+    }
+  
+    .black {
+      width: 30px;
+      height: 150px;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  
+    .logo {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .box {
+      width: 40px;
+      height: 160px;
+      font-size: 1rem;
+    }
+  
+    .black {
+      width: 25px;
+      height: 120px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  
+    header {
+      flex-wrap: wrap;
+    }
+  
+    .nav-links {
+      padding: 20px;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      width: 30px;
+      height: 140px;
+      font-size: 0.9rem;
+    }
+  
+    .black {
+      width: 20px;
+      height: 100px;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  
+    .nav-links {
+      width: 100%;
+    }
+  
+    .logo {
+      height: 35px;
+      width: 35px;
+    }
+  }
+  
