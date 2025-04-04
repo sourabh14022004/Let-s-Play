@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  z-index: -1;
   align-items: center;
   height: 100%;
 }
@@ -139,7 +139,7 @@ bottom part is an example of that.
     background-color: red;
     position: absolute;
     top: 60px;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
     width: 60%;
     height: 100vh;
     background-color: #333;
@@ -157,7 +157,7 @@ bottom part is an example of that.
     right: 0;
     opacity: 1;
     visibility: visible;
-    display: block;
+    display: flex;
   }
 
   .menu-toggle {
@@ -266,3 +266,28 @@ bottom part is an example of that.
     }
   }
   
+  .exit-btn {
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.657);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.exit-btn i {
+    font-size: 18px;
+}
+
+.exit-btn:hover {
+    color: rgb(64, 64, 64);
+}
