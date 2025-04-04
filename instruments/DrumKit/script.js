@@ -1,19 +1,33 @@
-// DOMContentLoaded checks wheather the
+// DOMContentLoaded checks wheather the 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-    });
-    // Optional: Close menu when clicking outside
-    document.addEventListener("click", (event) => {
-        if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-        }
-    });
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const exitButton = document.getElementsByClassName("exit-btn")[0];
+
+
+  menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active"); 
+      exitButton.style.display = 'none';
+
   });
+
+  // Optional: Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+      if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+      }
+      if (navLinks.classList.contains("active")) {
+          exitButton.style.display = 'none';
+      } else {
+          exitButton.style.display = 'block';
+      }
+  });
+});
+
+
   // my code goes here -------------
   let items = document.getElementsByClassName("items")[0];
   items.addEventListener("click", (e) => {

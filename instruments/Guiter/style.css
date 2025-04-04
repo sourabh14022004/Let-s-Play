@@ -192,3 +192,29 @@ bottom part is an example of that.
       width: 450px;
     }
   }
+
+  .exit-btn {
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.exit-btn i {
+    font-size: 18px;
+}
+
+.exit-btn:hover {
+    color: rgb(83, 83, 83);
+}

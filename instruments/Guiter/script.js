@@ -3,10 +3,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.querySelector(".nav-links");
+  const exitButton = document.getElementsByClassName("exit-btn")[0];
+
 
   menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
       menuToggle.classList.toggle("active"); 
+      exitButton.style.display = 'none';
+
   });
 
   // Optional: Close menu when clicking outside
@@ -14,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
           navLinks.classList.remove("active");
           menuToggle.classList.remove("active");
+      }
+      if (navLinks.classList.contains("active")) {
+          exitButton.style.display = 'none';
+      } else {
+          exitButton.style.display = 'block';
       }
   });
 });
