@@ -71,11 +71,13 @@ Object.keys(keyMap).forEach(key => {
 });
 
 const box = document.querySelectorAll('.box');
+console.log("this is box",box)
 const body = document.querySelector('body'); 
 
 box.forEach(key => {
-    key.addEventListener('mousedown', () => {
-    console.log("key pressed");
+    console.log("this is key : ",key);
+    key.addEventListener('mousedown', (e) => {
+    console.log("key pressed : ",e.target);
         const { color, sound } = keyMap[key.id];
         const element = document.getElementById(key.id);
         element.classList.add('pressed');
@@ -84,6 +86,7 @@ box.forEach(key => {
         audio.play();
     });
     key.addEventListener('mouseup', () => {
+        console.log("this is mouse up");
         key.classList.remove('pressed');
         body.style.backgroundColor = 'black';
 
@@ -120,12 +123,12 @@ body.addEventListener('keyup', (e) => {
 body.addEventListener('keypress', (e) => {
     const key = e.key.toLowerCase();
     if (keyMap[key]) {
-        const { color, sound } = keyMap[key];
         const element = document.getElementById(key);
+        const { color, sound } = keyMap[key];
         element.classList.add('pressed');
         const audio = new Audio(`../../audio/piano/${sound}.mp3`);
         body.style.backgroundColor = color;
         audio.play();
     }
-    element.classList.remove('pressed');
+    // element.classList.remove('pressed');
 })
