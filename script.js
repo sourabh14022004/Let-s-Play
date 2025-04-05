@@ -44,7 +44,7 @@ guitarElement.addEventListener("click",function(){
 // drumkit navigation
 const drumkitElement=document.getElementsByClassName("drumkit")[0];
 drumkitElement.addEventListener("click",function(){
-    window.location.href='./instruments/Drumkit/index.html';
+    window.location.href='./instruments/DrumKit/index.html';
 })
 
 // harmonium navigation
