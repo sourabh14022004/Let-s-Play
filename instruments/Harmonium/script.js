@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let noteSa = new Audio('../../audio/harmonium/key01.mp3');
     let noteRe = new Audio('../../audio/harmonium/key02.mp3');  
-    let noteGa = new Audio('../../audio/harmonium/key01.mp3');
-    let noteMa = new Audio('../../audio/harmonium/key02.mp3');
+    let noteGa = new Audio('../../audio/harmonium/key04.mp3');
+    let noteMa = new Audio('../../audio/harmonium/key05.mp3');
     let notePa = new Audio('../../audio/harmonium/key01.mp3');
-    let noteDha = new Audio('../../audio/harmonium/key02.mp3');
-    let noteNi = new Audio('../../audio/harmonium/key01.mp3');
+    let noteDha = new Audio('../../audio/harmonium/key06.mp3');
+    let noteNi = new Audio('../../audio/harmonium/key07.mp3');
     let noteSa2 = new Audio('../../audio/harmonium/key02.mp3');
   
 
