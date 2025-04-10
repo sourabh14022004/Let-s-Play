@@ -21,6 +21,7 @@ header {
     gap: 40px;
     margin: 0;
     padding-right: 45px;
+
 }
 
 .nav-links li {
@@ -130,6 +131,10 @@ bottom part is an example of that.
   font-size: 2rem;
   color: antiquewhite;
   padding: 1rem 0;
+  display:inline-block;
+  text-align: center;
+  width: 3rem;
+  border-radius: 100%;
 }
 @media screen and (max-width: 1024px) {
   .gui-image{
@@ -242,7 +247,7 @@ bottom part is an example of that.
     top: 90px;
     right: 10px;
     background-color: transparent;
-    color: black;
+    color: white;
     border: none;
     padding: 10px 16px;
     border-radius: 6px;
