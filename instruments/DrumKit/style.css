@@ -409,7 +409,7 @@
   }
 
   .exit-btn {
-    position: fixed;
+    position: absolute;
     top: 90px;
     right: 10px;
     background-color: black;
