@@ -12,13 +12,16 @@ header {
     color: white;
 
 }
-
+.main{
+  margin-top: 2rem;
+}
 .nav-links {
     list-style: none;
     display: flex;
     gap: 40px;
     margin: 0;
     padding-right: 45px;
+
 }
 
 .nav-links li {
@@ -67,6 +70,86 @@ html page then only you can apply animation...
 bottom part is an example of that.
 */
 
+.body{
+  background-color: black;
+  
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gui-text{
+  text-align: center;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+
+.image{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  
+}
+
+.buttonbody{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  margin-top: 7rem;
+  box-shadow: 0px 0px 10px 5px ;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #1D0E09;
+  z-index: -2;
+}
+
+.underline{
+  width: 40rem;
+  height: 2px;
+  background-color: #CBB290;
+  position: absolute;
+  z-index: -1;
+}
+.div1 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.div1 span {
+  font-size: 2rem;
+  color: antiquewhite;
+  padding: 1rem 0;
+  display:inline-block;
+  text-align: center;
+  width: 3rem;
+  border-radius: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .gui-image{
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gui-image{
+    width: 400px;
+  }
+  .buttons{
+    width: 450px;
+  }
+}
 
 /* Hide navigation links on small screens */
 @media (max-width: 768px) {
@@ -124,55 +207,7 @@ bottom part is an example of that.
         transform: translateY(-7px) rotate(-45deg);
     }
 }
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .gui-text{
-    text-align: center;
-  }
-  
-  .image{
-    display: flex;
-    justify-content: center;
-  }
-  
-  .buttonbody{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
-    margin-top: 7rem;
-  
-    
-    box-shadow: 0px 0px 10px 5px;
-  }
-  
-  .buttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40rem;
-    position: relative;
-    overflow: hidden;
-    background-color: #1D0E09;
-    z-index: -2;
-  }
-  
-  .underline{
-    width: 40rem;
-    height: 2px;
-    background-color: #CBB290;
-    position: absolute;
-    z-index: -1;
-  }
-  
-  .div1 span{
-    padding: 4rem;
-    font-size: 2rem;
-    color: antiquewhite;
-  }
+
   @media screen and (max-width: 1095px) {
     .gui-image{
       width: 800px;
@@ -192,13 +227,27 @@ bottom part is an example of that.
       width: 450px;
     }
   }
+  @media screen and (max-width: 375px) {
+    .gui-image{
+      width: 300px;
+    }
+    .buttons{
+      width: 20rem;
+    }
+    .buttonbody{
+      margin-top: 5rem;
+    }
+    .div1 {
+      justify-content: space-evenly;
+    }
+  }
 
   .exit-btn {
     position: fixed;
     top: 90px;
     right: 10px;
     background-color: transparent;
-    color: black;
+    color: white;
     border: none;
     padding: 10px 16px;
     border-radius: 6px;
