@@ -1,55 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    padding: 0;
-    margin: 0;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100vh;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding-right: 45px;
+}
+.nav-links li {
+  display: inline;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #ff9800;
+}
+.logo {
+  height: 50px;
+  width: 50px;
+  background-image: url("https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* Hamburger menu styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* to apply animation on any element, the element should be exist on the
+  html page then only you can apply animation...
+  bottom part is an example of that.
+  */
+/* Hide navigation links on small screens */
+@media (max-width: 768px) {
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding-right: 45px;
-  }
-  .nav-links li {
-    display: inline;
-  }
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s ease;
-  }
-  .nav-links a:hover {
-    color: #FF9800;
-  }
-  .logo {
-    height: 50px;
-    width: 50px;
-    background-image: url('https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  /* Hamburger menu styles */
-  .menu-toggle {
+    position: absolute;
+    top: 60px;
+    /* transform: translateX(100%); */
+    width: 60%;
+    height: 100vh;
+    background-color: #333;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    transition: right 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
     display: none;
+  }
+  .nav-links.active {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    padding-left: 20px;
+  }
+  .menu-toggle {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -63,373 +106,341 @@
     border-radius: 2px;
     transition: all 0.3s ease;
   }
-  /* to apply animation on any element, the element should be exist on the
-  html page then only you can apply animation...
-  bottom part is an example of that.
-  */
-  /* Hide navigation links on small screens */
-  @media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        /* transform: translateX(100%); */
-        width: 60%;
-        height: 100vh;
-        background-color: #333;
-        flex-direction: column;
-        align-items: start;
-        gap: 20px;
-        transition: right 0.5s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-    }
-    .nav-links.active {
-        right: 0;
-        opacity: 1;
-        visibility: visible;
-        display: flex;
-        padding-left: 20px;
-    }
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-    }
-    .menu-toggle span {
-        display: block;
-        height: 3px;
-        background-color: white;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-    /* Transforming the menu icon when active */
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
+  /* Transforming the menu icon when active */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
   }
-  /* my code goes here */
-  h1 {
-    /* padding: 4px 4px; */
-    /* border: 4px solid aqua; */
-    color: white;
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
   }
-  .parent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* background-color: red; */
-    width: 100vw;
-    height: 100vh;
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
-  .items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    width: 100%;
-    height: 80%;
-    /* background-color: aqua; */
+}
+/* my code goes here */
+h1 {
+  /* padding: 4px 4px; */
+  /* border: 4px solid aqua; */
+  color: white;
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+  width: 100vw;
+  height: 100vh;
+  gap: 50px;
+  padding-top: 30px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+  height: 80%;
+  /* background-color: aqua; */
+}
+.row1,
+.row2 {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 80%;
+  /* background-color: blue; */
+  height: 20%;
+  border-radius: 10px;
+}
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.div1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p1.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p2.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p3.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p4.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p5.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p6.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p7.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+.div8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* background-color: blue; */
+  background-image: url("../../public/DrumkitImages/p8.png");
+  background-size: cover;
+  background-position: center top;
+  width: 20%;
+  transition: background-color 1s;
+}
+p {
+  color: rgb(215, 215, 180);
+}
+@media screen and (max-width: 900px) {
+  .div1 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div2 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div3 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div4 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div5 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div6 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div7 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div8 {
+    height: 10rem;
+    width: 10rem;
   }
   .row1,
   .row2 {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
-    width: 80%;
-    /* background-color: blue; */
-    height: 20%;
-    border-radius: 10px;
+    height: 40%;
   }
-  img {
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-  }
+}
+@media screen and (max-width: 750px) {
   .div1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p1.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p2.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p3.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p4.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div5 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p5.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div6 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p6.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div7 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p7.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
   .div8 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* background-color: blue; */
-    background-image: url("../../public/DrumkitImages/p8.png");
-    background-size: cover;
-    background-position: center top;
-    width: 20%;
-    transition: background-color 1s;
+    height: 7rem;
+    width: 7rem;
   }
-  p {
-    color: rgb(215, 215, 180);
+  .row1,
+  .row2 {
+    height: 30%;
   }
-  @media screen and (max-width: 900px) {
-    .div1 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div2 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div3 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div4 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div5 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div6 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div7 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div8 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .row1,
-    .row2 {
-      height: 40%;
-    }
+}
+@media screen and (max-width: 500px) {
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  @media screen and (max-width: 750px) {
-    .div1 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div2 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div3 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div4 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div5 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div6 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div7 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .div8 {
-      height: 7rem;
-      width: 7rem;
-    }
-    .row1,
-    .row2 {
-      height: 30%;
-    }
+  .row1,
+  .row2 {
+    display: grid;
+    margin-bottom: 690px;
   }
-  @media screen and (max-width: 500px) {
-    .div1 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div2 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div3 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div4 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div5 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div6 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div7 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .div8 {
-      height: 5rem;
-      width: 5rem;
-    }
-    .row1,
-    .row2 {
-      height: 20%;
-    }
+  .div1 {
+    height: 5rem;
+    width: 5rem;
   }
-  @media screen and (min-width: 900px) {
-    .div1 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div2 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div3 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div4 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div5 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div6 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div7 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .div8 {
-      height: 10rem;
-      width: 10rem;
-    }
-    .row1,
-    .row2 {
-      height: 40%;
-    }
+  .div2 {
+    height: 5rem;
+    width: 5rem;
   }
+  .div3 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .div4 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .div5 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .div6 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .div7 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .div8 {
+    height: 5rem;
+    width: 5rem;
+  }
+  .row1,
+  .row2 {
+    height: 20%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .div1 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div2 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div3 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div4 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div5 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div6 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div7 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .div8 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .row1,
+  .row2 {
+    height: 40%;
+  }
+}
 
-  .exit-btn {
-    position: absolute;
-    top: 90px;
-    right: 10px;
-    background-color: black;
-    color: rgba(255, 255, 255, 0.657);
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s ease;
+.exit-btn {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.657);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .exit-btn i {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .exit-btn:hover {
-    color: rgb(64, 64, 64);
+  color: rgb(64, 64, 64);
 }
