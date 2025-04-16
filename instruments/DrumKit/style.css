@@ -337,11 +337,11 @@ p {
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
   }
   .row1,
   .row2 {
     display: grid;
+    margin-bottom: 690px;
   }
   .div1 {
     height: 5rem;
