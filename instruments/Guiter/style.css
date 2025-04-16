@@ -125,12 +125,13 @@ bottom part is an example of that.
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin: 1rem;
 }
 
 .div1 span {
   font-size: 2rem;
   color: antiquewhite;
-  padding: 1rem 0;
+  padding: 0.7rem 0;
   display:inline-block;
   text-align: center;
   width: 3rem;
