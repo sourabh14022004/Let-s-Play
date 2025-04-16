@@ -342,6 +342,7 @@ p {
   .row2 {
     display: grid;
     margin-bottom: 690px;
+    padding-left: 40px;
   }
   .div1 {
     height: 5rem;
