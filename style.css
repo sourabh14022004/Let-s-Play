@@ -84,7 +84,6 @@ bottom part is an example of that.
     .nav-links {
         position: absolute;
         top: 60px;
-        /* transform: translateX(100%); */
         width: 60%;
         height: 100vh;
         background-color: #333;
@@ -102,6 +101,7 @@ bottom part is an example of that.
         opacity: 1;
         visibility: visible;
         display: flex;
+        z-index: 10;
 
     }
 
