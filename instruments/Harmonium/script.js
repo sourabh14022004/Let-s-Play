@@ -1,206 +1,84 @@
-// DOMContentLoaded checks wheather the 
-
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    const exitButton = document.getElementsByClassName("exit-btn")[0];
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const exitButton = document.querySelector(".exit-btn");
+  const body = document.querySelector("body");
 
-
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active"); 
-        exitButton.style.display = 'none';
-    });
-
-    // Optional: Close menu when clicking outside
-    document.addEventListener("click", (event) => {
-        if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-        }
-        if (navLinks.classList.contains("active")) {
-          exitButton.style.display = 'none';
-      } else {
-          exitButton.style.display = 'block';
-      }
-    });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    let body = document.querySelector('.body') || document.body;
-    let sa = document.querySelector('#sa');
-    let re = document.querySelector('#re');
-    let ga = document.querySelector('#ga');
-    let ma = document.querySelector('#ma');
-    let pa = document.querySelector('#pa');
-    let dha = document.querySelector('#dha');
-    let ni = document.querySelector('#ni');
-    let sa2 = document.querySelector('#sa2');
-  
-    
-    let noteSa = new Audio('../../audio/harmonium/key01.mp3');
-    let noteRe = new Audio('../../audio/harmonium/key02.mp3');  
-    let noteGa = new Audio('../../audio/harmonium/key04.mp3');
-    let noteMa = new Audio('../../audio/harmonium/key05.mp3');
-    let notePa = new Audio('../../audio/harmonium/key01.mp3');
-    let noteDha = new Audio('../../audio/harmonium/key06.mp3');
-    let noteNi = new Audio('../../audio/harmonium/key07.mp3');
-    let noteSa2 = new Audio('../../audio/harmonium/key02.mp3');
-  
-
-    function addKeyPressEffect(element) {
-      if (element) {
-        element.classList.add('active', 'flash');
-        setTimeout(() => {
-          element.classList.remove('active', 'flash');
-        }, 300);
-      }
-    }
-  
-
-    if (body) {
-      body.addEventListener('keypress', function (event) {
-
-        noteSa.pause(); noteSa.currentTime = 0;
-        noteRe.pause(); noteRe.currentTime = 0;
-        noteGa.pause(); noteGa.currentTime = 0;
-        noteMa.pause(); noteMa.currentTime = 0;
-        notePa.pause(); notePa.currentTime = 0;
-        noteDha.pause(); noteDha.currentTime = 0;
-        noteNi.pause(); noteNi.currentTime = 0;
-        noteSa2.pause(); noteSa2.currentTime = 0;
-        
-
-        if (event.key === 'a' && sa) {
-          sa.style.backgroundColor = '#FFA500'; 
-          addKeyPressEffect(sa);
-          console.log('Playing Sa note');
-          noteSa.play();
-        }
-        if (event.key === 's' && re) {
-          re.style.backgroundColor = '#87CEEB'; 
-          addKeyPressEffect(re);
-          noteRe.play();
-        }
-        if (event.key === 'd' && ga) {
-          ga.style.backgroundColor = '#90EE90'; 
-          addKeyPressEffect(ga);
-          noteGa.play();
-        }
-        if (event.key === 'f' && ma) {
-          ma.style.backgroundColor = '#FF6347'; 
-          addKeyPressEffect(ma);
-          noteMa.play();
-        }
-        if (event.key === 'g' && pa) {
-          pa.style.backgroundColor = '#FFD700'; 
-          addKeyPressEffect(pa);
-          notePa.play();
-        }
-        if (event.key === 'h' && dha) {
-          dha.style.backgroundColor = '#DDA0DD'; 
-          addKeyPressEffect(dha);
-          noteDha.play();
-        }
-        if (event.key === 'j' && ni) {
-          ni.style.backgroundColor = '#00FFFF'; 
-          addKeyPressEffect(ni);
-          noteNi.play();
-        }
-        if (event.key === 'k' && sa2) {
-          sa2.style.backgroundColor = '#FF69B4'; 
-          addKeyPressEffect(sa2);
-          noteSa2.play();
-        }
-      });
-    }
-  
-
-    if (sa) {
-      sa.addEventListener('click', function() {
-        noteSa.pause(); noteSa.currentTime = 0;
-        sa.style.backgroundColor = '#FFA500';
-        addKeyPressEffect(sa);
-        noteSa.play();
-      });
-    }
-  
-    if (re) {
-      re.addEventListener('click', function() {
-        noteRe.pause(); noteRe.currentTime = 0;
-        re.style.backgroundColor = '#87CEEB';
-        addKeyPressEffect(re);
-        noteRe.play();
-      });
-    }
-  
-    if (ga) {
-      ga.addEventListener('click', function() {
-        noteGa.pause(); noteGa.currentTime = 0;
-        ga.style.backgroundColor = '#90EE90';
-        addKeyPressEffect(ga);
-        noteGa.play();
-      });
-    }
-  
-    if (ma) {
-      ma.addEventListener('click', function() {
-        noteMa.pause(); noteMa.currentTime = 0;
-        ma.style.backgroundColor = '#FF6347';
-        addKeyPressEffect(ma);
-        noteMa.play();
-      });
-    }
-  
-    if (pa) {
-      pa.addEventListener('click', function() {
-        notePa.pause(); notePa.currentTime = 0;
-        pa.style.backgroundColor = '#FFD700';
-        addKeyPressEffect(pa);
-        notePa.play();
-      });
-    }
-  
-    if (dha) {
-      dha.addEventListener('click', function() {
-        noteDha.pause(); noteDha.currentTime = 0;
-        dha.style.backgroundColor = '#DDA0DD';
-        addKeyPressEffect(dha);
-        noteDha.play();
-      });
-    }
-  
-    if (ni) {
-      ni.addEventListener('click', function() {
-        noteNi.pause(); noteNi.currentTime = 0;
-        ni.style.backgroundColor = '#00FFFF';
-        addKeyPressEffect(ni);
-        noteNi.play();
-      });
-    }
-  
-    if (sa2) {
-      sa2.addEventListener('click', function() {
-        noteSa2.pause(); noteSa2.currentTime = 0;
-        sa2.style.backgroundColor = '#FF69B4';
-        addKeyPressEffect(sa2);
-        noteSa2.play();
-      });
-    }
-  
-
-    if (body) {
-      body.addEventListener('keyup', function(event) {
-        if (event.key === 'a' && sa) sa.style.backgroundColor = 'ivory';
-        if (event.key === 's' && re) re.style.backgroundColor = 'ivory';
-        if (event.key === 'd' && ga) ga.style.backgroundColor = 'ivory';
-        if (event.key === 'f' && ma) ma.style.backgroundColor = 'ivory';
-        if (event.key === 'g' && pa) pa.style.backgroundColor = 'ivory';
-        if (event.key === 'h' && dha) dha.style.backgroundColor = 'ivory';
-        if (event.key === 'j' && ni) ni.style.backgroundColor = 'ivory';
-        if (event.key === 'k' && sa2) sa2.style.backgroundColor = 'ivory';
-      });
-    }
+  menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+      exitButton.style.display = navLinks.classList.contains("active") ? "none" : "flex";
   });
+
+  document.addEventListener("click", (event) => {
+      if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+          exitButton.style.display = "flex";
+      }
+  });
+
+  const keyMap = {
+      q: { note: "Sa", sound: "A2" },
+      w: { note: "Re♭", sound: "A3" },
+      e: { note: "Re", sound: "Ab2" },
+      r: { note: "Ga♭", sound: "Ab3" },
+      t: { note: "Ga",sound: "B2" },
+      y: { note: "Ma", sound: "B3" },
+      u: { note: "Ma♯", sound: "Bb2" },
+      i: { note: "Pa",sound: "Bb3" },
+      o: { note: "Dha♭",  sound: "C2" },
+      p: { note: "Dha",  sound: "C3" },
+      a: { note: "Ni♭", sound: "C4" },
+      s: { note: "Ni",  sound: "D2" },
+      d: { note: "Sa'",  sound: "Db2" },
+      f: { note: "Re'",  sound: "Db3" },
+      g: { note: "Re♭'",  sound: "Db4" },
+      h: { note: "Ga'", sound: "E2" },
+      j: { note: "Ga♭'",  sound: "E3" },
+      k: { note: "Ma'", sound: "E4" }
+  };
+
+  const boxes = document.querySelectorAll(".box");
+
+  boxes.forEach((box) => {
+      box.addEventListener("mousedown", () => {
+          const { color, sound } = keyMap[box.id];
+          box.classList.add("pressed");
+          body.style.backgroundColor = color;
+          const audio = new Audio(`../../audio/harmonium/${sound}.mp3`);
+          audio.play();
+      });
+
+      box.addEventListener("mouseup", () => {
+          box.classList.remove("pressed");
+          // body.style.backgroundColor = "#1a0d00";
+      });
+
+      box.addEventListener("mouseleave", () => {
+          box.classList.remove("pressed");
+          // body.style.backgroundColor = "#1a0d00";
+      });
+  });
+
+  body.addEventListener("keydown", (e) => {
+      const key = e.key.toLowerCase();
+      if (keyMap[key]) {
+          const { color, sound } = keyMap[key];
+          const element = document.getElementById(key);
+          element.classList.add("pressed");
+          // body.style.backgroundColor = color;
+          const audio = new Audio(`../../audio/piano/${sound}.mp3`);
+          audio.play();
+      }
+  });
+
+  body.addEventListener("keyup", (e) => {
+      const key = e.key.toLowerCase();
+      if (keyMap[key]) {
+          const element = document.getElementById(key);
+          element.classList.remove("pressed");
+          // body.style.backgroundColor = "#1a0d00";
+      }
+  });
+});
