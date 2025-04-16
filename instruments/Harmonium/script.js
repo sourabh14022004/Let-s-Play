@@ -23,19 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
       w: { note: "Re♭", sound: "A3" },
       e: { note: "Re", sound: "Ab2" },
       r: { note: "Ga♭", sound: "Ab3" },
-      t: { note: "Ga",sound: "B2" },
+      t: { note: "Ga", sound: "B2" },
       y: { note: "Ma", sound: "B3" },
       u: { note: "Ma♯", sound: "Bb2" },
-      i: { note: "Pa",sound: "Bb3" },
-      o: { note: "Dha♭",  sound: "C2" },
-      p: { note: "Dha",  sound: "C3" },
+      i: { note: "Pa", sound: "Bb3" },
+      o: { note: "Dha♭", sound: "C2" },
+      p: { note: "Dha", sound: "C3" },
       a: { note: "Ni♭", sound: "C4" },
-      s: { note: "Ni",  sound: "D2" },
-      d: { note: "Sa'",  sound: "Db2" },
-      f: { note: "Re'",  sound: "Db3" },
-      g: { note: "Re♭'",  sound: "Db4" },
+      s: { note: "Ni", sound: "D2" },
+      d: { note: "Sa'", sound: "Db2" },
+      f: { note: "Re'", sound: "Db3" },
+      g: { note: "Re♭'", sound: "Db4" },
       h: { note: "Ga'", sound: "E2" },
-      j: { note: "Ga♭'",  sound: "E3" },
+      j: { note: "Ga♭'", sound: "E3" },
       k: { note: "Ma'", sound: "E4" }
   };
 
@@ -43,33 +43,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   boxes.forEach((box) => {
       box.addEventListener("mousedown", () => {
-          const { color, sound } = keyMap[box.id];
-          box.classList.add("pressed");
-          body.style.backgroundColor = color;
-          const audio = new Audio(`../../audio/harmonium/${sound}.mp3`);
-          audio.play();
+          const keyId = box.id;
+          if (keyMap[keyId]) {
+              const { note, sound } = keyMap[keyId];
+              box.classList.add("pressed");
+              // Play the sound
+              const audio = new Audio(`../../audio/harmonium/${sound}.mp3`);
+              audio.play();
+          }
       });
 
       box.addEventListener("mouseup", () => {
           box.classList.remove("pressed");
-          // body.style.backgroundColor = "#1a0d00";
       });
 
       box.addEventListener("mouseleave", () => {
           box.classList.remove("pressed");
-          // body.style.backgroundColor = "#1a0d00";
       });
   });
 
   body.addEventListener("keydown", (e) => {
       const key = e.key.toLowerCase();
       if (keyMap[key]) {
-          const { color, sound } = keyMap[key];
+          const { note, sound } = keyMap[key];
           const element = document.getElementById(key);
-          element.classList.add("pressed");
-          // body.style.backgroundColor = color;
-          const audio = new Audio(`../../audio/piano/${sound}.mp3`);
-          audio.play();
+          if (element) {
+              element.classList.add("pressed");
+              // Play the sound
+              const audio = new Audio(`../../audio/harmonium/${sound}.mp3`);
+              audio.play();
+          }
       }
   });
 
@@ -77,8 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const key = e.key.toLowerCase();
       if (keyMap[key]) {
           const element = document.getElementById(key);
-          element.classList.remove("pressed");
-          // body.style.backgroundColor = "#1a0d00";
+          if (element) {
+              element.classList.remove("pressed");
+          }
       }
   });
 });
