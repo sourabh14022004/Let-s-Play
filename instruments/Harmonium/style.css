@@ -80,7 +80,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: black;
+  background-color: #333;
   color: white;
 }
 
@@ -104,7 +104,7 @@ header {
 }
 
 .nav-links a:hover {
-  color: black;
+  color: #ff9800;
 }
 
 .logo {
@@ -113,7 +113,6 @@ header {
   background-image: url("https://i.pinimg.com/474x/f8/d0/45/f8d0453cf54d005611b041f4677adf60.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 50%;
   border: 2px solid #ffcc80;
   cursor: pointer;
 }
@@ -135,11 +134,11 @@ header {
 }
 
 .exit-btn {
-  position: fixed;
+  position: absolute;
   top: 90px;
   right: 10px;
-  background-color: #5e2c04;
-  color: rgba(255, 255, 255, 0.857);
+  background-color: black;
+  color: rgba(255, 255, 255, 0.657);
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -157,7 +156,7 @@ header {
 }
 
 .exit-btn:hover {
-  background-color: #4d2e00;
+  color: rgb(64, 64, 64);
 }
 
 .menu-toggle {
