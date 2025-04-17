@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HarmoniumPlay</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-<body class="body">
+<body>
     <header>
-        <div class="logo" onclick="window.location.href='/Let-s-Play2'" >
-        </div>
+        <div class="logo" onclick="window.location.href='/Let-s_Play2'"></div>
         <nav>
             <ul class="nav-links">
-                <li><a href="/Let-s-Play2">Home</a></li>
+                <li><a href="/Let-s_Play2">Home</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Services</a></li>
             </ul>
@@ -25,25 +23,39 @@
             <span></span>
         </div>
     </header>
-    <button class="exit-btn" onclick="window.location.href='/Let-s-Play2'">
-        <i class="fa-solid fa-door-open"> Exit</i>
+
+    <button class="exit-btn" onclick="window.location.href='index.html'">
+        <i class="fa-solid fa-door-open"></i> Exit
     </button>
-    <div class="harmonium-title">
-      <h1>HARMONIUM</h1>
-    </div>
-    
-    
-    <div class="m">
-      <div class="main-keys">
-          <div class="key" id="sa">A</div>
-          <div class="key" id="re">S</div>
-          <div class="key" id="ga">D</div>
-          <div class="key" id="ma">F</div>
-          <div class="key" id="pa">G</div>
-          <div class="key" id="dha">H</div>
-          <div class="key" id="ni">J</div>
-          <div class="key" id="sa2">K</div>
+
+    <div class="content">
+        <div class="harmonium-body">
+            <div class="bellows"></div>
+            <div class="container">
+                <div class="box white" id="q">Sa</div>
+                <div class="box black" id="w">Re</div>
+                <div class="box white" id="e">Ga</div>
+                <div class="box black" id="r">Ma</div>
+                <div class="box white" id="t">Pa</div>
+                <div class="box white" id="y">Di</div>
+                <div class="box black" id="u">Ni</div>
+                <div class="box white" id="i">Sa</div>
+                <div class="box black" id="o">Re</div>
+                <div class="box white" id="p">Ma</div>
+            </div>
+            <!-- <div class="container">
+                <div class="box black" id="a">Ni♭</div>
+                <div class="box white" id="s">Ni</div>
+                <div class="box black" id="d">Sa'</div>
+                <div class="box white" id="f">Re'</div>
+                <div class="box black" id="g">Re♭'</div>
+                <div class="box white" id="h">Ga'</div>
+                <div class="box black" id="j">Ga♭'</div>
+                <div class="box white" id="k">Ma'</div>
+            </div> -->
         </div>
     </div>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
