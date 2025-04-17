@@ -82,10 +82,6 @@ lets_play/ ├── audio/ # Audio files for instruments │ ├── drumkit/
 
 3. Play and enjoy the music! 🎶
 
-## 🧩 Technologies Used
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
 
 ## 📬 Feedback
 Have suggestions or want to contribute? Feel free to open an issue or a pull request.
