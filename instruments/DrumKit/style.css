@@ -75,6 +75,7 @@ header {
     /* transform: translateX(100%); */
     width: 60%;
     height: 100vh;
+    padding-top: 10px;
     background-color: #333;
     flex-direction: column;
     align-items: start;
